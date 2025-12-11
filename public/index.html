@@ -3320,7 +3320,7 @@ footer {
                 <!-- Charts -->
                 <div class="charts-grid">
                     <div class="chart-container">
-                        <h3 class="mb-4"><i class="fas fa-chart-line text-primary"></i> Download 7 Hari Terakhir</h3>
+                        <h3 class="mb-4"><i class="fas fa-chart-line text-primary"></i> Download 5 hari Terakhir</h3>
                         <div style="height: 300px;">
                             <canvas id="dailyChart"></canvas>
                         </div>
@@ -3343,8 +3343,8 @@ footer {
                             <p class="text-sm text-gray">Statistik diperbarui secara real-time setiap kali ada pengguna yang mendownload video.</p>
                         </div>
                         <div class="card p-4">
-                            <h4 class="text-primary">Histori 7 Hari</h4>
-                            <p class="text-sm text-gray">Grafik menampilkan data download selama 7 hari terakhir untuk analisis trend harian.</p>
+                            <h4 class="text-primary">Histori 5 hari</h4>
+                            <p class="text-sm text-gray">Grafik menampilkan data download selama 5 hari terakhir untuk analisis trend harian.</p>
                         </div>
                     </div>
                 </div>
@@ -3975,7 +3975,7 @@ async function displayResult(data) {
             const totalDownloads = data.totalDownloads || 0;
             const today = new Date().toISOString().split('T')[0];
             const todayDownloads = data.dailyStats?.data?.[data.dailyStats.data.length - 1] || 0;
-            const thisMonth = new Date().toISOString().slice(0, 7);
+            const thisMonth = new Date().toISOString().slice(0, 5);
             const thisMonthDownloads = data.monthlyStats?.data?.[data.monthlyStats.data.length - 1] || 0;
             const dailyAvg = Math.round(data.dailyStats?.data?.reduce((a, b) => a + b, 0) / (data.dailyStats?.data?.length || 1));
             
@@ -4005,7 +4005,7 @@ async function displayResult(data) {
                     <i class="fas fa-chart-line text-primary text-2xl"></i>
                     <h3>Rata-rata</h3>
                     <div class="stat-number">${dailyAvg.toLocaleString()}</div>
-                    <p class="text-gray">Per hari (7 hari)</p>
+                    <p class="text-gray">Per hari (5 hari)</p>
                 </div>
             `;
         }
